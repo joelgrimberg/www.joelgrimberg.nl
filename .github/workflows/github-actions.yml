@@ -30,3 +30,18 @@ jobs:
         with:
           start: npm run dev
           wait-on: 'http://localhost:3000'
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v2
+        # with:
+        # path: . # The root location of your Astro project inside the repository. (optional)
+
+  deploy:
+    needs: cypress-run 
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
