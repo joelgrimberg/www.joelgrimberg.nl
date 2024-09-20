@@ -3,12 +3,12 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "astro dev --port 3000",
+    "start": "astro dev --port 3000",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "npx cypress run --e2e",
+    "cypress:run": "npx cypress run --e2e",
     "cypress:open": "npx cypress open --e2e --browser chrome"
   },
   "dependencies": {
@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "cypress": "^13.14.2",
-    "prettier": "3.3.3"
+    "prettier": "3.3.3",
+    "start-server-and-test": "^2.0.8"
   }
 }
