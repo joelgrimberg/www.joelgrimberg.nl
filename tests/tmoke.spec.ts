@@ -1,4 +1,3 @@
-// @ts-check
 import { test, expect } from '@playwright/test';
 
 test('App loads and nav works', async ({ page }) => {

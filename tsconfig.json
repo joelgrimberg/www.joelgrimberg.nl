@@ -1,0 +1,11 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "outDir": "../tests-out",
+  }
+}
