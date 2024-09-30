@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'snippet'>['data'];
+type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage, tags } =
     Astro.props;
@@ -87,7 +87,7 @@ const { title, description, pubDate, updatedDate, heroImage, tags } =
                         {
                             tags && (
                                 <ul>
-                                    {tags.map((tag) => (
+                                    {tags.map((tag: String) => (
                                         <li>
                                             <button>{tag}</button>
                                         </li>
