@@ -1,6 +1,5 @@
 {
   "name": "agreeable-apogee",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --port 3000",
@@ -20,6 +19,8 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.47.2",
+    "@types/node": "^22.7.4",
     "cypress": "^13.14.2",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
