@@ -1,9 +1,3 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "strictNullChecks": true,
-    "moduleResolution": "Node",
-    "sourceMap": true,
-    "outDir": "../tests-out"
-  }
+  "extends": "astro/tsconfigs/strict"
 }
