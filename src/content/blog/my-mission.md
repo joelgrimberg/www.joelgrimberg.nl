@@ -1,15 +1,26 @@
 ---
 title: 'My Mission'
-description: '...'
-pubDate: 'Jul 08 2022'
-heroImage: '/blog-placeholder-3.jpg'
-tags: ['lorem', 'ipsum', 'dolor']
+description: 'Why I do what I do'
+pubDate: '09-10-2024'
+heroImage: '/37-without-x-logo.jpg'
 ---
 
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+I see many people being stuck in what they do. There is a lack of energy and
+motivation to move forward, learn new stuff, feed their curiosity and grow.
+
+I want to help people to get unstuck, to find their passion, to learn new
+things, and be driven by curiosity and growth.
+
+# Values
+
+When I help out people and organisations, I live by the following values:
+
+-   **Sharing Knowledge**: I have experienced that sharing knowledge is the best
+    way to grow.
+-   **Curiosity**: I am curious about how things work and how they can be
+    improved.
+-   **Quality Without Compromise**: I strive for the best quality in everything
+    I do.
+-   **Customer Intimacy**: I want to understand the needs of my customers and
+    help them to grow. This means I will not hold back in sharing my knowledge
+    and experience.

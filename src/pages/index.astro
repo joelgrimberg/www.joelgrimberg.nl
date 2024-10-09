@@ -19,28 +19,34 @@ const posts = (await getCollection('blog')).sort(
         <Header />
         <main>
             <p>
-                Hi, I'm Joël Grimberg
-                <br />
+                Hi, I'm Joël Grimberg.
+                <br /><br />
                 I am here to share my thoughts and experiences on DX and Automation
-                with you
+                with you.
+
+                <br /><br />
+
+                If you want to get in contact, feel free to reach out via my <contact
+                    page
+                >
+                    <hr />
+
+                    <p>Here's my latest Blog Post</p>
+                    <a href={`/blog/${posts[posts.length - 1].slug}`}>
+                        <img
+                            width={720}
+                            height={360}
+                            src={posts[posts.length - 1].data.heroImage}
+                            alt=""
+                        />
+
+                        <br />
+
+                        {posts[posts.length - 1].data.title}
+                    </a>
+                </contact>
+                <Footer />
             </p>
-
-            <hr />
-
-            <p>Latest Blog Post:</p>
-            <a href={`/blog/${posts[posts.length - 1].slug}`}>
-                <img
-                    width={720}
-                    height={360}
-                    src={posts[posts.length - 1].data.heroImage}
-                    alt=""
-                />
-
-                <br />
-
-                {posts[posts.length - 1].data.title}
-            </a>
         </main>
-        <Footer />
     </body>
 </html>

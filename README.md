@@ -2,7 +2,7 @@
 
 ## About
 
-Stack: Astro, Cypress
+Stack: Astro, Cypress, Playwright
 Hosting Platform: Github Pages
 
 ## Development
