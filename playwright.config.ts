@@ -1,7 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-    testDir: './tests',
+    testDir: './e2e',
+    /* Maximum time one test can run for. */
+    timeout: 30 * 1000,
     /* Run tests in files in parallel */
     fullyParallel: true,
     /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -18,7 +20,7 @@ export default defineConfig({
         baseURL: 'http://localhost:3000',
         testIdAttribute: 'test-id',
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    screenshot: 'only-on-failure',
+        screenshot: 'only-on-failure',
         trace: 'on-first-retry'
     },
 
@@ -26,43 +28,31 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] }
+            use: {
+                ...devices['Desktop Chrome'],
+                launchOptions: {
+                    args: [
+                        '--allow-file-access-from-files',
+                        '--use-fake-ui-for-media-stream',
+                        '--use-fake-device-for-media-stream',
+                        '--use-file-for-fake-audio-capture=tests/sample.wav'
+                    ]
+                }
+            }
         },
-
         {
             name: 'firefox',
             use: { ...devices['Desktop Firefox'] }
         },
-
         {
             name: 'webkit',
             use: { ...devices['Desktop Safari'] }
         }
-
-        /* Test against mobile viewports. */
-        // {
-        //   name: 'Mobile Chrome',
-        //   use: { ...devices['Pixel 5'] },
-        // },
-        // {
-        //   name: 'Mobile Safari',
-        //   use: { ...devices['iPhone 12'] },
-        // },
-
-        /* Test against branded browsers. */
-        // {
-        //   name: 'Microsoft Edge',
-        //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-        // },
-        // {
-        //   name: 'Google Chrome',
-        //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-        // },
     ],
 
     webServer: {
         command: 'npm run dev',
         url: 'http://localhost:3000',
-        reuseExistingServer: !process.env.CI
+        reuseExistingServer: true
     }
 });

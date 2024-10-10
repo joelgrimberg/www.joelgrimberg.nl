@@ -3,7 +3,10 @@ import { test, expect } from '@playwright/test';
 test('App loads and nav works', async ({ page }) => {
     await page.goto('/');
 
-    await page.getByRole('navigation').getByText('Blog').click();
+    const nav = page.getByRole('navigation');
+    const blogLink = nav.getByRole('link', { name: /blog/i });
+    await blogLink.click();
+
     await expect(page.getByTestId('blog-posts')).toBeVisible();
     await expect(page.getByRole('link', { name: /home/i })).not.toHaveClass(
         'active'
