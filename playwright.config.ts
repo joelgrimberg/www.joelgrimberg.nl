@@ -27,10 +27,15 @@ export default defineConfig({
 
     /* Configure projects for major browsers */
     projects: [
+        // {
+        //     name: 'chromium',
+        //     use: { ...devices['Desktop Chrome'] }
+        // },
+        /* Test against branded browsers. */
         {
-            name: 'chromium',
-            use: { ...devices['Desktop Chrome'] }
-        },
+            name: 'Google Chrome',
+            use: { ...devices['Desktop Chrome'], channel: 'chrome' } // or 'chrome-beta'
+        }
         // {
         //     name: 'firefox',
         //     use: { ...devices['Desktop Firefox'] }
