@@ -2,8 +2,7 @@
 
 ## About
 
-Stack: Astro, Cypress, Playwright
-Hosting Platform: Github Pages
+Stack: Astro, Cypress, Playwright Hosting Platform: Github Pages
 
 ## Development
 
@@ -23,4 +22,4 @@ To open the Cypress GUI, run:
 
 ```bash
 npm run cypress:open
-```
+
