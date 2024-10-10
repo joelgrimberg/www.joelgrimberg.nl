@@ -28,17 +28,7 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: {
-                ...devices['Desktop Chrome'],
-                launchOptions: {
-                    args: [
-                        '--allow-file-access-from-files',
-                        '--use-fake-ui-for-media-stream',
-                        '--use-fake-device-for-media-stream',
-                        '--use-file-for-fake-audio-capture=tests/sample.wav'
-                    ]
-                }
-            }
+            use: { ...devices['Desktop Chrome'] }
         },
         {
             name: 'firefox',
