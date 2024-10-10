@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('App loads and nav works', async ({ page }) => {
     await page.goto('/');
-
+    page.setViewportSize({ width: 1200, height: 1600 });
     const nav = page.getByRole('navigation');
     const blogLink = nav.getByRole('link', { name: /blog/i });
     await blogLink.click();

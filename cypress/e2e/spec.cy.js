@@ -8,7 +8,9 @@ describe('template spec', () => {
     });
 
     it('Should load a blog post', () => {
-        cy.findByRole('navigation').findByText('Blog').click();
+        cy.findByRole('navigation')
+            .findByRole('link', { name: /blog/i })
+            .click();
         cy.contains('My Mission').click();
         cy.url().should('include', '/blog/my-mission');
         cy.contains('My Mission');
