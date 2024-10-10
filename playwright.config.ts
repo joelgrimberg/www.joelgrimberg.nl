@@ -34,7 +34,11 @@ export default defineConfig({
         /* Test against branded browsers. */
         {
             name: 'Google Chrome',
-            use: { ...devices['Desktop Chrome'], channel: 'chrome' } // or 'chrome-beta'
+            use: {
+                ...devices['Desktop Chrome'],
+                channel: 'chrome',
+                viewport: { width: 1280, height: 720 }
+            } // or 'chrome-beta'
         }
         // {
         //     name: 'firefox',

@@ -13,7 +13,7 @@ test('App loads and nav works', async ({ page }) => {
         'active'
     );
     await expect(page.getByRole('link', { name: /blog/i })).toHaveClass(
-        'active'
+        /active/
     );
     await expect(page.getByText('My Mission')).toBeVisible();
     await page.getByText('My Mission').click();

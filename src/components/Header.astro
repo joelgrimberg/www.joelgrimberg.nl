@@ -5,13 +5,25 @@ import { SITE_TITLE } from '../consts';
 
 <header>
     <nav>
-        <h2><a href="/">{SITE_TITLE}</a></h2>
+        <h2>
+            <a href="/" class="hover-underline-animation left">{SITE_TITLE}</a>
+        </h2>
         <div class="internal-links" aria-role="navigation">
-            <HeaderLink href="/">Home</HeaderLink>
-            <HeaderLink href="/snippets">Snippets</HeaderLink>
-            <HeaderLink href="/blog">Blog</HeaderLink>
-            <HeaderLink href="/uses">Uses</HeaderLink>
-            <HeaderLink href="/about">About</HeaderLink>
+            <HeaderLink class="hover-underline-animation left" href="/"
+                >Home</HeaderLink
+            >
+            <HeaderLink class="hover-underline-animation left" href="/snippets"
+                >Snippets</HeaderLink
+            >
+            <HeaderLink class="hover-underline-animation left" href="/blog"
+                >Blog</HeaderLink
+            >
+            <HeaderLink class="hover-underline-animation left" href="/uses"
+                >Uses</HeaderLink
+            >
+            <HeaderLink class="hover-underline-animation left" href="/about"
+                >About</HeaderLink
+            >
         </div>
         <div class="social-links">
             <a
@@ -101,7 +113,7 @@ import { SITE_TITLE } from '../consts';
     }
     nav a.active {
         text-decoration: none;
-        border-bottom-color: var(--accent);
+        /* border-bottom-color: var(--accent); */
     }
     .social-links,
     .social-links a {

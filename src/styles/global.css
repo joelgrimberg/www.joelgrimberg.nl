@@ -83,14 +83,11 @@ strong,
 b {
     font-weight: 700;
 }
-a {
-    color: var(--grey);
-    font-size: 16px;
-    underline: none;
-    text-decoration: none;
-}
-/* a:hover { */
-/*     color: var(--accent); */
+/* a { */
+/*     color: var(--grey); */
+/*     font-size: 16px; */
+/*     underline: none; */
+/*     text-decoration: none; */
 /* } */
 p {
     margin-bottom: 1em;
@@ -162,25 +159,25 @@ hr {
     white-space: nowrap;
 }
 
-ad.hover-underline-animation {
-    display: inline-block;
-    position: relative;
-}
-
-a.hover-underline-animation::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #0087ca;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
-a.hover-underline-animation:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
+/* a.hover-underline-animation { */
+/*     display: inline-block; */
+/*     position: relative; */
+/* } */
+/**/
+/* a.hover-underline-animation::after { */
+/*     content: ''; */
+/*     position: absolute; */
+/*     width: 100%; */
+/*     transform: scaleX(0); */
+/*     height: 2px; */
+/*     bottom: 0; */
+/*     left: 0; */
+/*     background-color: #0087ca; */
+/*     transform-origin: bottom right; */
+/*     transition: transform 0.0002s; */
+/* } */
+/**/
+/* a.hover-underline-animation:hover::after { */
+/*     transform: scaleX(1); */
+/*     transform-origin: bottom left; */
+/* } */
