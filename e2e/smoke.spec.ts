@@ -5,6 +5,7 @@ test('App loads and nav works', async ({ page }) => {
 
     const nav = page.getByRole('navigation');
     const blogLink = nav.getByRole('link', { name: /blog/i });
+    await blogLink.scrollIntoViewIfNeeded();
     await blogLink.click({ force: true });
 
     await expect(page.getByTestId('blog-posts')).toBeVisible();
