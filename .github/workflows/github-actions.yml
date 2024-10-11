@@ -8,7 +8,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  🏗️ build:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -25,7 +25,7 @@ jobs:
         with:
           name: dist
           path: dist
-  cypress-run:
+  🔍Cypress test:
     needs: build
     runs-on: ubuntu-22.04
     steps:
@@ -42,7 +42,7 @@ jobs:
         uses: withastro/action@v2
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
-  playwright-run:
+  🎭 Playwright tests:
     needs: build
     timeout-minutes: 60
     runs-on: ubuntu-latest
@@ -71,7 +71,7 @@ jobs:
         name: playwright-traces
         path: test-results
         retention-days: 30
-  deploy:
+  🚀 Deploy Build:
     needs: [ cypress-run, playwright-run ] 
     runs-on: ubuntu-latest
     environment:
