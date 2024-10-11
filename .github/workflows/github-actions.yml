@@ -8,76 +8,97 @@ permissions:
   id-token: write
 
 jobs:
-  🏗️ build:
+  build:
+    name: 🏗️ build
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Install dependencies
         run: npm install
+
       - name: Build Astro site
         run: npm run build
+
       - name: bash
         run: |
           ls -la
+
       - name: Upload site output
         uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
-  🔍Cypress test:
+
+  cypress:
+    name: 🔍Cypress test
     needs: build
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install npm dependencies, cache them correctly
-      # and run all Cypress tests
+
       - name: Cypress run
         uses: cypress-io/github-action@v6
         with:
           start: npm run dev
           wait-on: 'http://localhost:3000'
+
       - name: Install, build, and upload your site output
         uses: withastro/action@v2
         # with:
         # path: . # The root location of your Astro project inside the repository. (optional)
-  🎭 Playwright tests:
+
+  playwright:
+    name: 🎭 Playwright
     needs: build
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: lts/*
-    - name: Install dependencies
-      run: npm ci
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
-    - name: Download a single artifact
-      uses: actions/download-artifact@v4
-      with:
-        name: dist
-        path: dist/
-    - name: bash
-      run: |
-        ls -la
-    - name: Run Playwright tests
-      run: npx playwright test
-    - uses: actions/upload-artifact@v4
-      if: ${{ !cancelled() }}
-      with:
-        name: playwright-traces
-        path: test-results
-        retention-days: 30
-  🚀 Deploy Build:
-    needs: [ cypress-run, playwright-run ] 
+      - name: ⬇︎⬇️Checkout repo
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📥 Download deps
+        run: npm ci
+
+      - name: 🌐 Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: 🔽 Download a single artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: 💻 bash
+        run: |
+          ls -la
+
+      - name: 🎭 Playwright tests 
+        run: npx playwright test
+
+      - name: 📊 Upload artifacts
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-traces
+          path: test-results
+          retention-days: 30
+
+  deploy:
+    name: 🚀 Deploy Build
+    needs: [ cypress, playwright ] 
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: 🚀 Deploy Production
         id: deployment
         uses: actions/deploy-pages@v4
