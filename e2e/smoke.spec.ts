@@ -2,7 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test('App loads and nav works', async ({ page }) => {
     //await page.goto('/blog');
-    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    //    await page.goto('/', { waitUntil: 'domcontentloaded' });
+    await page.goto('/', { waitUntil: 'networkidle' });
+    await page.waitForLoadState('networkidle');
 
     const nav = page.getByRole('navigation');
     const blogLink = nav.getByText('Blog');
