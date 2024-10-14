@@ -58,7 +58,7 @@ h2 {
     font-size: 2.441em;
 }
 h3 {
-    font-size: 1.653em;
+    font-size: 1.2em;
 }
 h4 {
     font-size: 1.563em;
@@ -128,13 +128,22 @@ hr {
     }
 }
 li {
-    margin-bottom: 0.5em;
     list-style-type: none;
+    position: relative; /* It's needed for setting position to absolute in the next rule. */
+}
+
+li::before {
+    content: '■';
+    position: absolute;
+    left: -0.8em; /* Adjust this value so that it appears where you want. */
+    font-size: 0.7em; /* Adjust this value so that it appears what size you want. */
+    color: grey;
 }
 li a {
     /* display: inline-block; */
-    text-decoration: none;
+
     padding: 0em 2em;
+    color: rgb(var(--gray-dark));
 }
 a.active {
     font-weight: bolder;
